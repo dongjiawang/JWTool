@@ -1,4 +1,5 @@
 # iOS-JWTool
+####第一次提交
 ```Objective-c
  //  通过图片的二进制数据分析图片类型
 + (NSString *)getImageTypeFormData:(NSData *)imageData;
