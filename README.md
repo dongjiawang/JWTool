@@ -24,7 +24,7 @@
 + (NSString *)convertChineseToPinYin:(NSString *)chineseStr;
 //  字符串转成UIColor
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
-//  RGB转UIColor:    @"255,255,255"
+//  RGB转UIColor:    @"(255,255,255)"
 + (UIColor *)colorWithRGB:(NSString *)RGBStr alpha:(CGFloat)alpha;
 ```
 
