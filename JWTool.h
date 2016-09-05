@@ -87,7 +87,7 @@
  */
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
 /**
- *  RGB转UIColor:    @"255,255,255"
+ *  RGB转UIColor:    @"(255,255,255)"
  *
  *  @param RGBStr RGB
  *  @param alpha  透明度
