@@ -16,3 +16,19 @@
  //  画View的指定角为圆角
 + (UIView *)drawView:(UIView *)view roundingCorners:(UIRectCorner)corners cornerRadius:(CGSize)cornerRadius;
 ```
+
+#### 第二次提交
+
+```objective-c
+//  汉字转拼音
++ (NSString *)convertChineseToPinYin:(NSString *)chineseStr;
+//  字符串转成UIColor
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
+//  RGB转UIColor:    @"255,255,255"
++ (UIColor *)colorWithRGB:(NSString *)RGBStr alpha:(CGFloat)alpha;
+```
+
+
+
+
+

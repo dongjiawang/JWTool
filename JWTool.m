@@ -117,4 +117,64 @@
     view.layer.mask = maskLayer;
     return view;
 }
+
++ (NSString *)convertChineseToPinYin:(NSString *)chineseStr {
+    NSMutableString * theChinese = [NSMutableString stringWithString:chineseStr];
+    CFRange range = CFRangeMake(0, theChinese.length);
+    CFStringTransform((CFMutableStringRef)theChinese, &range, kCFStringTransformToLatin, NO);
+    range = CFRangeMake(0, theChinese.length);
+    CFStringTransform((CFMutableStringRef)theChinese, &range, kCFStringTransformStripCombiningMarks, NO);
+    NSString * pinyin = [theChinese stringByReplacingOccurrencesOfString:@" " withString:@""];
+    return pinyin;
+}
+
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha {
+    NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    if ([cString length] < 6) {
+        return [UIColor clearColor];
+    }
+    if ([cString length] != 6) {
+        return [UIColor clearColor];
+    }
+    if ([cString hasPrefix:@"0X"]) {
+        cString = [cString substringFromIndex:2];
+    }
+    if ([cString hasPrefix:@"#"]) {
+        cString = [cString substringFromIndex:1];
+    }
+    
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
+}
+
++ (UIColor *)colorWithRGB:(NSString *)RGBStr alpha:(CGFloat)alpha {
+    if (RGBStr == nil || RGBStr.length == 0)
+    {
+        return [UIColor clearColor];
+    }
+    
+    int red, green, blue;
+    NSRange range;
+    range.length = 3;
+    
+    range.location = 1;
+    [[NSScanner scannerWithString:[RGBStr substringWithRange:range]] scanInt:&red];
+    range.location = 5;
+    [[NSScanner scannerWithString:[RGBStr substringWithRange:range]] scanInt:&green];
+    range.location = 9;
+    [[NSScanner scannerWithString:[RGBStr substringWithRange:range]] scanInt:&blue];
+    
+    return [UIColor colorWithRed:(float)(red/255.0f) green:(float)(green/255.0f) blue:(float)(blue/255.0f) alpha:alpha];
+}
 @end

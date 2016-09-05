@@ -69,4 +69,30 @@
  *  @return 画好的view 
  */
 + (UIView *)drawView:(UIView *)view roundingCorners:(UIRectCorner)corners cornerRadius:(CGSize)cornerRadius;
+/**
+ *  汉字转拼音
+ *
+ *  @param chineseName 汉字
+ *
+ *  @return 拼音
+ */
++ (NSString *)convertChineseToPinYin:(NSString *)chineseStr;
+/**
+ *  字符串转成UIColor
+ *
+ *  @param color 字符串的color
+ *  @param alpha 透明度
+ *
+ *  @return UIColor
+ */
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
+/**
+ *  RGB转UIColor:    @"255,255,255"
+ *
+ *  @param RGBStr RGB
+ *  @param alpha  透明度
+ *
+ *  @return UIColor
+ */
++ (UIColor *)colorWithRGB:(NSString *)RGBStr alpha:(CGFloat)alpha;
 @end
