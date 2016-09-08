@@ -28,7 +28,13 @@
 + (UIColor *)colorWithRGB:(NSString *)RGBStr alpha:(CGFloat)alpha;
 ```
 
-
+####第三次提交
+```objective-c
+ //  把图片绘制指定size
++ (UIImage *)ScaleToSize:(UIImage *)image size:(CGSize)size;
+ //  根据需要获取当前的年、月、日、星期、时、分、秒
++ (NSInteger)getCurrentDetailTime:(NSCalendarUnit)darUnit;
+```
 
 
 

@@ -51,6 +51,14 @@
  */
 + (NSString *)getCurrentTimeString;
 /**
+ *  根据需要获取当前的年、月、日、星期、时、分、秒
+ *
+ *  @param darUnit 需要获取到类型
+ *
+ *  @return 返回数据
+ */
++ (NSInteger)getCurrentDetailTime:(NSCalendarUnit)darUnit;
+/**
  *  画圆角
  *
  *  @param view   需要切割的View
@@ -95,4 +103,13 @@
  *  @return UIColor
  */
 + (UIColor *)colorWithRGB:(NSString *)RGBStr alpha:(CGFloat)alpha;
+/**
+ *  把图片绘制指定size
+ *
+ *  @param image 图片
+ *  @param size  大小
+ *
+ *  @return 修改后的图【么
+ */
++ (UIImage *)ScaleToSize:(UIImage *)image size:(CGSize)size;
 @end

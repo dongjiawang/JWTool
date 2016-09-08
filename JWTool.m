@@ -100,6 +100,49 @@
     return time;
 }
 
++ (NSInteger)getCurrentDetailTime:(NSCalendarUnit)darUnit {
+    NSDate *nowDate = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = darUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:nowDate];
+    switch (darUnit) {
+        case NSCalendarUnitYear:
+        {
+            return [dateComponent year];
+        }
+            break;
+        case NSCalendarUnitMonth:
+        {
+            return [dateComponent month];
+        }
+            break;
+        case NSWeekdayCalendarUnit:
+        {
+            return [dateComponent weekday];
+        }
+            break;
+        case NSDayCalendarUnit:
+        {
+            return [dateComponent day];
+        }
+            break;
+        case NSMinuteCalendarUnit:
+        {
+            return [dateComponent minute];
+        }
+            break;
+        case NSSecondCalendarUnit:
+        {
+            return [dateComponent second];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    return 0;
+}
+
 + (UIView *)clipsView:(UIView *)view withCornerRadius:(CGFloat)radius {
     view.clipsToBounds = YES;
     view.layer.cornerRadius = radius;
@@ -176,5 +219,19 @@
     [[NSScanner scannerWithString:[RGBStr substringWithRange:range]] scanInt:&blue];
     
     return [UIColor colorWithRed:(float)(red/255.0f) green:(float)(green/255.0f) blue:(float)(blue/255.0f) alpha:alpha];
+}
+
++ (UIImage *)ScaleToSize:(UIImage *)image size:(CGSize)size {
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    UIGraphicsBeginImageContext(size);
+    // 绘制改变大小的图片
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    // 从当前context中创建一个改变大小后的图片
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    // 返回新的改变大小后的图片
+    return scaledImage;
 }
 @end
