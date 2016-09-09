@@ -112,4 +112,12 @@
  *  @return 修改后的图【么
  */
 + (UIImage *)ScaleToSize:(UIImage *)image size:(CGSize)size;
+/**
+ *  验证手机号
+ *
+ *  @param mobile 手机号
+ *
+ *  @return 验证结果    
+ */
++ (NSString *)valiMobile:(NSString *)mobile;
 @end

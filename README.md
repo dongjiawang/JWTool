@@ -36,5 +36,10 @@
 + (NSInteger)getCurrentDetailTime:(NSCalendarUnit)darUnit;
 ```
 
+####第四次提交
+```objective-c
+ //  验证手机号
++ (NSString *)valiMobile:(NSString *)mobile;
+```
 
 
