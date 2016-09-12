@@ -120,4 +120,12 @@
  *  @return 验证结果    
  */
 + (NSString *)valiMobile:(NSString *)mobile;
+/**
+ *  验证身份证号码（15位、18位）
+ *
+ *  @param value 号码字符串
+ *
+ *  @return 是否正确
+ */
++ (BOOL)validateIDCardNumber:(NSString *)value;
 @end

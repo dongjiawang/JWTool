@@ -42,4 +42,10 @@
 + (NSString *)valiMobile:(NSString *)mobile;
 ```
 
+####第五次提交
+```objective-c
+ //  验证身份证号码（15位、18位）
++ (BOOL)validateIDCardNumber:(NSString *)value;
+```
+
 
