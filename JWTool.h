@@ -136,4 +136,13 @@
  *  @return 结果
  */
 + (BOOL)isValidateEmail:(NSString *)email;
+/**
+ *  图片高斯模糊
+ *
+ *  @param blurImage  需要模糊的图片
+ *  @param blurRadius 模糊度
+ *
+ *  @return 完成的图片
+ */
++ (UIImage *)creatBlurImage:(UIImage *)blurImage blurRadius:(CGFloat)blurRadius;
 @end

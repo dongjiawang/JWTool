@@ -52,5 +52,10 @@
 //  验证邮箱地址
 + (BOOL)isValidateEmail:(NSString *)email;
 ```
+####第七次提交
+```objective-c
+//  图片高斯模糊
++ (UIImage *)creatBlurImage:(UIImage *)blurImage blurRadius:(CGFloat)blurRadius;
+```
 
 

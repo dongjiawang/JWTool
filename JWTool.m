@@ -377,4 +377,11 @@
     return [emailTest evaluateWithObject:email];
 }
 
++ (UIImage *)creatBlurImage:(UIImage *)blurImage blurRadius:(CGFloat)blurRadius {
+    GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
+    blurFilter.blurRadiusInPixels = blurRadius;
+    UIImage *outputImage = [blurFilter imageByFilteringImage:blurImage];
+    return outputImage;
+}
+
 @end
