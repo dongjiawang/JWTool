@@ -47,5 +47,10 @@
  //  验证身份证号码（15位、18位）
 + (BOOL)validateIDCardNumber:(NSString *)value;
 ```
+####第六次提交
+```objective-c
+//  验证邮箱地址
++ (BOOL)isValidateEmail:(NSString *)email;
+```
 
 

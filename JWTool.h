@@ -128,4 +128,12 @@
  *  @return 是否正确
  */
 + (BOOL)validateIDCardNumber:(NSString *)value;
+/**
+ *  验证邮箱地址
+ *
+ *  @param email 邮箱地址
+ *
+ *  @return 结果
+ */
++ (BOOL)isValidateEmail:(NSString *)email;
 @end
