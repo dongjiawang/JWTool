@@ -145,4 +145,89 @@
  *  @return 完成的图片
  */
 + (UIImage *)creatBlurImage:(UIImage *)blurImage blurRadius:(CGFloat)blurRadius;
+/**
+ 旋转动画
+ 
+ @param dur         动画时间
+ @param degree      旋转角度
+ @param direction   Z轴偏移（0 ~ 1）
+ @param repeatCount 旋转次数
+ 
+ @return 动画
+ */
++ (CABasicAnimation *)rotation:(float)dur degree:(float)degree direction:(int)direction repeatCount:(int)repeatCount;
+/**
+ 指定时间内一直闪烁动画
+ 
+ @param time 闪烁时间
+ 
+ @return 动画
+ */
++ (CABasicAnimation *)opacityForeverAnimation:(float)time;
+/**
+ 指定时间内闪烁次数的动画
+ 
+ @param repeatTimes 闪烁次数
+ @param time        闪烁时间
+ 
+ @return 动画
+ */
++ (CABasicAnimation *)opacityTimes_Animation:(float)repeatTimes durTimes:(float)time;
+/**
+ 横向移动的动画
+ 
+ @param time 动画时间
+ @param x    移动距离
+ 
+ @return 动画
+ */
++ (CABasicAnimation *)moveX:(float)time X:(NSNumber *)x;
+/**
+ 纵向移动的动画
+ 
+ @param time 动画时间
+ @param y    移动距离
+ 
+ @return 动画
+ */
++ (CABasicAnimation *)moveY:(float)time Y:(NSNumber *)y;
+/**
+ 缩放动画
+ 
+ @param Multiple      缩放后的大小
+ @param orginMultiple 初始大小
+ @param time          动画时间
+ @param repeatTimes   重复次数
+ 
+ @return 动画
+ */
++ (CABasicAnimation *)scale:(NSNumber *)Multiple orgin:(NSNumber *)orginMultiple durTimes:(float)time Rep:(float)repeatTimes;
+/**
+ 组合动画
+ 
+ @param animationAry 动画数组
+ @param time         动画时间
+ @param repeatTimes  动画次数
+ 
+ @return 动画
+ */
++ (CAAnimationGroup *)groupAnimation:(NSArray *)animationAry durTimes:(float)time Rep:(float)repeatTimes;
+/**
+ 点移动动画
+ 
+ @param point 目标点
+ 
+ @return 动画
+ */
++ (CABasicAnimation *)movepoint:(CGPoint )point;
+/**
+ 路径动画
+ 
+ @param path        路径
+ @param time        动画时间
+ @param repeatTimes 动画次数
+ 
+ @return 动画
+ */
++ (CAKeyframeAnimation *)keyframeAniamtion:(CGMutablePathRef)path durTimes:(float)time Rep:(float)repeatTimes;
 @end

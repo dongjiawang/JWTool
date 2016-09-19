@@ -57,5 +57,25 @@
 //  图片高斯模糊
 + (UIImage *)creatBlurImage:(UIImage *)blurImage blurRadius:(CGFloat)blurRadius;
 ```
-
+####第八次提交
+```objective-c
+// 旋转动画
++ (CABasicAnimation *)rotation:(float)dur degree:(float)degree direction:(int)direction repeatCount:(int)repeatCount;
+// 指定时间内一直闪烁动画
++ (CABasicAnimation *)opacityForeverAnimation:(float)time;
+// 指定时间内闪烁次数的动画
++ (CABasicAnimation *)opacityTimes_Animation:(float)repeatTimes durTimes:(float)time;
+// 横向移动的动画
++ (CABasicAnimation *)moveX:(float)time X:(NSNumber *)x;
+// 纵向移动的动画
++ (CABasicAnimation *)moveY:(float)time Y:(NSNumber *)y;
+// 缩放动画
++ (CABasicAnimation *)scale:(NSNumber *)Multiple orgin:(NSNumber *)orginMultiple durTimes:(float)time Rep:(float)repeatTimes;
+// 组合动画
++ (CAAnimationGroup *)groupAnimation:(NSArray *)animationAry durTimes:(float)time Rep:(float)repeatTimes;
+// 点移动动画
++ (CABasicAnimation *)movepoint:(CGPoint )point;
+// 路径动画
++ (CAKeyframeAnimation *)keyframeAniamtion:(CGMutablePathRef)path durTimes:(float)time Rep:(float)repeatTimes;
+```
 
