@@ -391,7 +391,7 @@
     return outputImage;
 }
 
-+ (CABasicAnimation *)rotation:(float)dur degree:(float)degree direction:(int)direction repeatCount:(int)repeatCount {
++ (CABasicAnimation *)CAAnimationRotation:(float)dur degree:(float)degree direction:(int)direction repeatCount:(int)repeatCount {
     CATransform3D rotationTransform = CATransform3DMakeRotation(degree, 0, 0,direction);
     CABasicAnimation* animation;
     animation = [CABasicAnimation animationWithKeyPath:@"transform"];
@@ -407,7 +407,7 @@
     return animation;
 }
 
-+ (CABasicAnimation *)opacityForeverAnimation:(float)time {
++ (CABasicAnimation *)CAAnimationOpacityForeverAnimation:(float)time {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     animation.fromValue = [NSNumber numberWithFloat:1.0];
     animation.toValue = [NSNumber numberWithFloat:0.0];
@@ -419,7 +419,7 @@
     return animation;
 }
 
-+ (CABasicAnimation *)opacityTimes_Animation:(float)repeatTimes durTimes:(float)time {
++ (CABasicAnimation *)CAAnimationOpacityTimes_Animation:(float)repeatTimes durTimes:(float)time {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     animation.fromValue  =[NSNumber numberWithFloat:1.0];
     animation.toValue = [NSNumber numberWithFloat:0.4];
@@ -432,7 +432,7 @@
     return  animation;
 }
 
-+ (CABasicAnimation *)moveX:(float)time X:(NSNumber *)x {
++ (CABasicAnimation *)CAAnimationMoveX:(float)time X:(NSNumber *)x {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
     animation.toValue = x;
     animation.duration = time;
@@ -441,7 +441,7 @@
     return animation;
 }
 
-+ (CABasicAnimation *)moveY:(float)time Y:(NSNumber *)y {
++ (CABasicAnimation *)CAAnimationMoveY:(float)time Y:(NSNumber *)y {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
     animation.toValue = y;
     animation.duration = time;
@@ -450,7 +450,7 @@
     return animation;
 }
 
-+ (CABasicAnimation *)scale:(NSNumber *)Multiple orgin:(NSNumber *)orginMultiple durTimes:(float)time Rep:(float)repeatTimes {
++ (CABasicAnimation *)CAAnimationScale:(NSNumber *)Multiple orgin:(NSNumber *)orginMultiple durTimes:(float)time Rep:(float)repeatTimes {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     animation.fromValue = orginMultiple;
     animation.toValue = Multiple;
@@ -462,7 +462,7 @@
     return animation;
 }
 
-+ (CAAnimationGroup *)groupAnimation:(NSArray *)animationAry durTimes:(float)time Rep:(float)repeatTimes {
++ (CAAnimationGroup *)CAAnimationGroupAnimation:(NSArray *)animationAry durTimes:(float)time Rep:(float)repeatTimes {
     CAAnimationGroup *animation = [CAAnimationGroup animation];
     animation.animations = animationAry;
     animation.duration = time;
@@ -472,7 +472,7 @@
     return animation;
 }
 
-+ (CABasicAnimation *)movepoint:(CGPoint )point {
++ (CABasicAnimation *)CAAnimationMovepoint:(CGPoint )point {
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.translation"];
     animation.toValue = [NSValue valueWithCGPoint:point];
     animation.removedOnCompletion = NO;
@@ -480,7 +480,7 @@
     return animation;
 }
 
-+ (CAKeyframeAnimation *)keyframeAniamtion:(CGMutablePathRef)path durTimes:(float)time Rep:(float)repeatTimes {
++ (CAKeyframeAnimation *)CAAnimationKeyframeAniamtion:(CGMutablePathRef)path durTimes:(float)time Rep:(float)repeatTimes {
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     animation.path = path;
     animation.removedOnCompletion = NO;
