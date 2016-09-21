@@ -78,4 +78,9 @@
 // 路径动画
 + (CAKeyframeAnimation *)keyframeAniamtion:(CGMutablePathRef)path durTimes:(float)time Rep:(float)repeatTimes;
 ```
+####第九次提交
+```objective-c
+// 设置view的圆角边框
++ (void)LRViewBorderRadius:(UIView *)view radius:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color;
+```
 

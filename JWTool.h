@@ -78,6 +78,15 @@
  */
 + (UIView *)drawView:(UIView *)view roundingCorners:(UIRectCorner)corners cornerRadius:(CGSize)cornerRadius;
 /**
+ 设置view的圆角边框
+ 
+ @param view   view
+ @param radius 圆角大小
+ @param width  边框宽度
+ @param color  边框颜色
+ */
++ (void)LRViewBorderRadius:(UIView *)view radius:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color;
+/**
  *  汉字转拼音
  *
  *  @param chineseName 汉字

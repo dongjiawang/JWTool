@@ -161,6 +161,13 @@
     return view;
 }
 
++ (void)LRViewBorderRadius:(UIView *)view radius:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color {
+    view.layer.cornerRadius = radius;
+    view.layer.masksToBounds = YES;
+    view.layer.borderWidth = width;
+    view.layer.borderColor = [color CGColor];
+}
+
 + (NSString *)convertChineseToPinYin:(NSString *)chineseStr {
     NSMutableString * theChinese = [NSMutableString stringWithString:chineseStr];
     CFRange range = CFRangeMake(0, theChinese.length);
