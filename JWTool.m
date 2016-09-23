@@ -384,6 +384,20 @@
     return [emailTest evaluateWithObject:email];
 }
 
++ (BOOL)isNameValid:(NSString *)name {
+    //提示 标签不能输入特殊字符
+    NSString *contentStr =@"^[u4e00-u9fa5]{1,}|[A-Za-z]{1,}|\\.{1,}|\\。{1,}$";
+    //验证格式正则
+    NSString *formatStr = @"[u4e00-u9fa5]{0,}\\.|[A-Za-z]{0,}\\。$";
+    
+    NSPredicate* nameContent = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", contentStr];
+    NSPredicate* nameFormt = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", formatStr];
+    if (![nameContent evaluateWithObject:name] && ![nameFormt evaluateWithObject:name]) {
+        return YES;
+    }
+    return NO;
+}
+
 + (UIImage *)creatBlurImage:(UIImage *)blurImage blurRadius:(CGFloat)blurRadius {
     GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
     blurFilter.blurRadiusInPixels = blurRadius;
@@ -490,6 +504,16 @@
     animation.duration = time;
     animation.repeatCount = repeatTimes;
     return animation;
+}
+
++ (BOOL)judgeIllegalCharacter:(NSString *)content {
+    //提示 标签不能输入特殊字符
+    NSString *str =@"^[A-Za-z0-9\\u4e00-\u9fa5]+$";
+    NSPredicate* emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", str];
+    if (![emailTest evaluateWithObject:content]) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

@@ -84,3 +84,16 @@
 + (void)LRViewBorderRadius:(UIView *)view radius:(CGFloat)radius width:(CGFloat)width color:(UIColor *)color;
 ```
 
+####第十次提交
+```objective-c
+// 判断字符串中是否含有非法字符（非法字符是指 除数字 字母 文字以外的所有字符）
++ (BOOL)judgeIllegalCharacter:(NSString *)content;
+// 验证姓名
+/*
+        1.汉字、字母、中间点“•”、下方点“.”，其他字符禁止录入
+        2.  仅输入汉字以及下方点“.”时，提示：姓名格式错误
+        3.  仅输入字母以及中间点“•”时，提示：姓名格式错误
+*/        
++ (BOOL)isNameValid:(NSString *)name;
+```
+
