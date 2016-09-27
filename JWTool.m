@@ -385,14 +385,11 @@
 }
 
 + (BOOL)isNameValid:(NSString *)name {
-    //提示 标签不能输入特殊字符
-    NSString *contentStr =@"^[u4e00-u9fa5]{1,}|[A-Za-z]{1,}|\\.{1,}|\\。{1,}$";
-    //验证格式正则
-    NSString *formatStr = @"[u4e00-u9fa5]{0,}\\.|[A-Za-z]{0,}\\。$";
+    //不能输入特殊字符
+    NSString *contentStr =@"[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*";
     
     NSPredicate* nameContent = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", contentStr];
-    NSPredicate* nameFormt = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", formatStr];
-    if (![nameContent evaluateWithObject:name] && ![nameFormt evaluateWithObject:name]) {
+    if ([nameContent evaluateWithObject:name]) {
         return YES;
     }
     return NO;
