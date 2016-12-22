@@ -92,3 +92,8 @@
 + (BOOL)isNameValid:(NSString *)name;
 ```
 
+####第十一次提交
+```objective-c
+//UIColor 转16进制 hexString
++ (NSString *)hexStringFromColor:(UIColor *)color;
+```

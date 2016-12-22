@@ -113,6 +113,13 @@
  */
 + (UIColor *)colorWithRGB:(NSString *)RGBStr alpha:(CGFloat)alpha;
 /**
+ UIColor 转16进制 hexString
+
+ @param color UIColor
+ @return hex色值
+ */
++ (NSString *)hexStringFromColor:(UIColor *)color;
+/**
  *  把图片绘制指定size
  *
  *  @param image 图片
